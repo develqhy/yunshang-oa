@@ -1,6 +1,7 @@
 package com.yunshang.oa.controller;
 
 import com.yunshang.oa.model.Role;
+import com.yunshang.oa.result.CommonResult;
 import com.yunshang.oa.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +22,9 @@ public class RoleController {
     private RoleService roleService;
 
     @GetMapping("/findAll")
-    public List<Role> getAll() {
-        return roleService.list();
+    public CommonResult getAll() {
+        List<Role> list = roleService.list();
+        return CommonResult.ok(list);
     }
 
 }
