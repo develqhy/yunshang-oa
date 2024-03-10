@@ -11,9 +11,35 @@
 
     <artifactId>yunshang-oa-service</artifactId>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+   <dependencies>
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-test</artifactId>
+           <scope>test</scope>
+       </dependency>
+
+       <dependency>
+           <groupId>com.yunshang.oa</groupId>
+           <artifactId>yunshang-oa-model</artifactId>
+           <version>${project.version}</version>
+       </dependency>
+
+       <dependency>
+           <groupId>com.yunshang.oa</groupId>
+           <artifactId>yunshang-oa-service-util</artifactId>
+           <version>${project.version}</version>
+       </dependency>
+   </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+            </plugin>
+        </plugins>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
 
 </project>
