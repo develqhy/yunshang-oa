@@ -1,5 +1,6 @@
 package com.yunshang.oa.result;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -10,8 +11,11 @@ import lombok.Data;
 @Data
 public class CommonResult<T> {
 
+    @ApiModelProperty("响应状态码")
     private Integer code;
+    @ApiModelProperty("响应提示信息")
     private String msg;
+    @ApiModelProperty("响应数据")
     private T data;
 
     private CommonResult() {}
